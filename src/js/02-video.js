@@ -12,9 +12,11 @@ player.on('timeupdate', throttle(function (data) {
 const lastCurrentTime = localStorage.getItem('videoplayer-current-time');
 const playCurrentTime = JSON.parse(lastCurrentTime);
 
-player
+if (playCurrentTime) {
+  player
   .setCurrentTime(playCurrentTime)
-  .then(() => {})
+  .then(() => {
+   })
   .catch(function (error) {
     switch (error.name) {
       case 'RangeError':
@@ -23,3 +25,6 @@ player
         break;
     }
   });
+}
+
+
