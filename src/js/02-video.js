@@ -14,7 +14,7 @@ const playCurrentTime = JSON.parse(lastCurrentTime);
 
 player
   .setCurrentTime(playCurrentTime)
-  .then((seconds) => {})
+  .then(() => {})
   .catch(function (error) {
     switch (error.name) {
       case 'RangeError':
